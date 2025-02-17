@@ -11,7 +11,6 @@ export default class DeleteTask
   async handle(id: number) {
     try {
       await this.taskRepository.delete(id);
-
       return true;
     } catch (error) {
       throw new BadRequestException(error.message);
